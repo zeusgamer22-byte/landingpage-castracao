@@ -648,7 +648,7 @@ img {
 
 /* CONVERSION SECTION */
 .conversion {
-  background: linear-gradient(135deg, rgba(0, 61, 61, 0.75) 0%, rgba(0, 61, 61, 0.85) 100%), url('onibus.jpeg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(0, 61, 61, 0.75) 0%, rgba(0, 61, 61, 0.85) 100%), url('/castracao/onibus.jpeg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
