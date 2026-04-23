@@ -50,7 +50,7 @@
 ║  • style.css      → Cores e estilos compartilhados          ║
 ║  • shopping.css   → Estilos exclusivos da loja              ║
 ║  • mutiroes.css   → Estilos exclusivos dos mutirões         ║
-║  • main.js        → Calculadora, FAQ e menu mobile          ║
+║  • main.js        → FAQ, modal e menu mobile                ║
 ║                                                              ║
 ║  O QUE EDITAR COM FREQUÊNCIA                                 ║
 ║  • Número WhatsApp → busque "553491026420" (Ctrl+F)         ║
@@ -67,9 +67,8 @@
 ║  • HERO       → banner principal com chamada e estatísticas ║
 ║  • SOBRE      → "Quem somos" com foto da equipe             ║
 ║  • SERVIÇOS   → 6 cards de serviços                         ║
-║  • CALCULADORA → ferramenta de nutrição (NER)               ║
 ║  • DIFERENCIAIS → números e diferenciais da clínica         ║
-║  • DEPOIMENTOS → 3 avaliações de tutores                    ║
+║  • DEPOIMENTOS → seção institucional em atualização         ║
 ║  • TRANSPARÊNCIA → perguntas respondidas                    ║
 ║  • CTA        → botão de agendamento central                ║
 ║  • FAQ        → perguntas e respostas expansíveis           ║
@@ -168,33 +167,6 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════ CALCULADORA ══════════════════════════════ -->
-  <section class="sec sec-ltr text-center" id="calculadora">
-    <div class="container">
-      <span class="tag reveal">Nutrição inteligente</span>
-      <h2 class="st reveal">Calculadora de Necessidade Energética</h2>
-      <p class="sd reveal">Descubra a Necessidade Energética de Repouso (NER) do seu pet — a base científica para um plano alimentar personalizado.</p>
-      <div class="calc-card reveal">
-        <div class="calc-form">
-          <div class="calc-field">
-            <label for="calc-especie">Espécie</label>
-            <select id="calc-especie">
-              <option value="cao">Cão</option>
-              <option value="gato">Gato</option>
-            </select>
-          </div>
-          <div class="calc-field">
-            <label for="calc-peso">Peso (kg)</label>
-            <input type="text" id="calc-peso" placeholder="Ex: 8,5" inputmode="decimal" />
-          </div>
-          <button class="btn btn-primary" id="calc-btn">Calcular NER</button>
-        </div>
-        <div class="calc-result" id="calc-result" aria-live="polite"></div>
-        <p class="calc-note">*NER = 70 × peso<sup>0,75</sup> kcal/dia. Valores para orientação. Um plano completo requer avaliação veterinária.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ══════════════════════════════ DIFERENCIAIS ══════════════════════════════ -->
   <section class="sec dif text-center" id="diferenciais">
     <div class="container">
@@ -214,30 +186,8 @@
   <section class="sec sec-lt text-center" id="depoimentos">
     <div class="container">
       <span class="tag reveal">Depoimentos</span>
-      <h2 class="st reveal">Últimas avaliações no Google</h2>
-      <p class="sd reveal">As 5 avaliações mais recentes do seu Perfil da Empresa aparecem aqui automaticamente.</p>
-      <div class="g-reviews reveal" id="google-reviews" aria-live="polite">
-        <div class="g-reviews-topbar">
-          <div class="g-reviews-brand">
-            <strong>Avaliações verificadas</strong>
-            <span>Google Meu Negócio via Places API</span>
-          </div>
-          <div class="g-reviews-nav" aria-label="Controles do carrossel">
-            <button type="button" class="g-reviews-btn" id="reviews-prev" aria-label="Ver avaliações anteriores">‹</button>
-            <button type="button" class="g-reviews-btn" id="reviews-next" aria-label="Ver próximas avaliações">›</button>
-          </div>
-        </div>
-
-        <div class="g-reviews-status" id="reviews-status">
-          Carregando avaliações do Google...
-        </div>
-
-        <div class="g-reviews-viewport" id="reviews-viewport" hidden>
-          <div class="g-reviews-track" id="reviews-track"></div>
-        </div>
-
-        <div class="g-reviews-dots" id="reviews-dots" aria-label="Paginação do carrossel"></div>
-      </div>
+      <h2 class="st reveal">Estamos atualizando esta seção</h2>
+      <p class="sd reveal">Os depoimentos da Vet Viajante vão voltar em breve, com uma apresentação mais organizada e alinhada ao restante do site.</p>
     </div>
   </section>
 
@@ -328,7 +278,7 @@
           <a href="#servicos">Consultas</a>
           <a href="#servicos">Cirurgias</a>
           <a href="#servicos">Exames</a>
-          <a href="#calculadora">Dietas</a>
+          <a href="#servicos">Dietas</a>
           <a href="#servicos">Vacinas</a>
         </div>
         <div class="ft-col">
@@ -415,27 +365,6 @@
     </div>
   </div>
 
-  <script>
-    window.GOOGLE_REVIEWS_CONFIG = {
-      apiKey: 'API_KEY',
-      placeId: 'PChIJ4-sEmeXRupQRvWWiZb3-OwY',
-      language: 'pt-BR',
-      region: 'BR',
-      maxReviews: 5
-    };
-  </script>
   <script src="main.js"></script>
-  <script>
-    (function loadGooglePlacesApi() {
-      const cfg = window.GOOGLE_REVIEWS_CONFIG || {};
-      if (!cfg.apiKey || cfg.apiKey === 'API_KEY') return;
-
-      const script = document.createElement('script');
-      script.async = true;
-      script.defer = true;
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(cfg.apiKey)}&loading=async&libraries=places&callback=initGoogleReviewsCarousel&language=${encodeURIComponent(cfg.language || 'pt-BR')}&region=${encodeURIComponent(cfg.region || 'BR')}`;
-      document.body.appendChild(script);
-    })();
-  </script>
 </body>
 </html>
