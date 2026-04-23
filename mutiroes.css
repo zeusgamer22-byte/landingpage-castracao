@@ -1,0 +1,697 @@
+/* ════════════════════════════════════════════════════════════
+   mutiroes.css — Estilos exclusivos da página Mutirões
+   Arquivo base compartilhado: style.css
+   ════════════════════════════════════════════════════════════
+
+   ÍNDICE DE SEÇÕES
+   ─────────────────────────────────────────────────────────────
+    1. Nav — link ativo no menu
+    2. Hero — banner do topo com estatísticas de impacto
+    3. Castramóvel — seção da unidade móvel (specs + card visual)
+    4. Próximos Mutirões — cards de eventos com status e vagas
+    5. Mapa do Itinerário — linha do tempo de cidades
+    6. Impacto — contadores de resultados
+    7. Galeria — grid de fotos de operações anteriores
+    8. B2G (Prefeituras) — seção institucional para gestores
+    9. CTA Final — "Quer o Castramóvel na sua cidade?"
+   10. Responsivo — ajustes para celular e tablet
+
+   ════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────
+   1. NAV — Destaca o link da página atual no menu
+   ───────────────────────────────────────────────────────────── */
+
+.hd-nav-active {
+  color: var(--br) !important;
+  font-weight: 500;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   2. HERO — Banner principal com estatísticas
+   ───────────────────────────────────────────────────────────── */
+
+.mut-hero {
+  background: var(--dk);
+  padding: 64px 2rem 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Padrão de pontos sutil no fundo do hero */
+.mut-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(26, 200, 212, .07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.mut-hero > * { position: relative; }
+
+/* Etiqueta pequena acima do título ("Saúde Pública Animal") */
+.mut-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26, 200, 212, .15);
+  border: 1px solid rgba(26, 200, 212, .3);
+  color: var(--br);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  letter-spacing: .5px;
+}
+
+.mut-hero h1 {
+  font-size: clamp(26px, 4vw, 48px);
+  font-weight: 500;
+  color: var(--wh);
+  line-height: 1.2;
+  max-width: 720px;
+  margin: 0 auto 16px;
+}
+.mut-hero h1 em { font-style: normal; color: var(--br); }
+
+.mut-hero-sub {
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: rgba(255, 255, 255, .62);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+}
+
+/* Botões CTA do hero */
+.mut-hero-ctas {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+
+/* Contadores de impacto (animais castrados, municípios...) */
+.mut-hero-stats {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  padding-top: 36px;
+}
+.mut-stat { text-align: center; }
+.mut-stat strong {
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--br);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.mut-stat span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, .45);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+/* Divisória vertical entre os números */
+.mut-divd {
+  width: 1px; height: 44px;
+  background: rgba(255, 255, 255, .1);
+  align-self: center;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   3. CASTRAMÓVEL — Seção da unidade móvel
+   ───────────────────────────────────────────────────────────── */
+
+.castramovel { padding: 80px 2rem; background: var(--lt); }
+
+.castramovel-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.castramovel-content > .tag { margin-bottom: 16px; }
+
+.castramovel-content h2 {
+  font-size: clamp(22px, 2.8vw, 34px);
+  font-weight: 500;
+  color: var(--tx);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.castramovel-content p {
+  font-size: 14px;
+  color: var(--mu);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+/* Lista de especificações técnicas */
+.cm-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 28px;
+}
+.cm-spec {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--wh);
+  border-radius: var(--rs);
+  border: 1px solid rgba(14, 125, 143, .1);
+}
+.cm-spec-ico {
+  font-size: 18px;
+  line-height: 1;
+  min-width: 24px;
+  padding-top: 1px;
+}
+.cm-spec-txt strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tx);
+  margin-bottom: 2px;
+}
+.cm-spec-txt span { font-size: 12px; color: var(--mu); line-height: 1.5; }
+
+/* Card escuro "ficha técnica" do ônibus */
+.castramovel-visual { position: relative; }
+
+.bus-card {
+  background: var(--dk);
+  border-radius: var(--rl);
+  padding: 36px 32px 32px;
+  color: var(--wh);
+  position: relative;
+  overflow: hidden;
+}
+/* Círculo decorativo no canto */
+.bus-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  background: rgba(26, 200, 212, .06);
+  border-radius: 50%;
+}
+.bus-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(26, 200, 212, .3));
+}
+.bus-card h3 { font-size: 20px; font-weight: 500; color: var(--wh); margin-bottom: 8px; }
+.bus-card p  { font-size: 13px; color: rgba(255, 255, 255, .55); line-height: 1.7; margin-bottom: 24px; }
+
+/* Badges de equipamentos (ex: "Autoclave classe B") */
+.bus-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.bus-badge {
+  background: rgba(26, 200, 212, .12);
+  border: 1px solid rgba(26, 200, 212, .25);
+  color: var(--br);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: .3px;
+}
+
+/* Linha de certificação CRMV no rodapé do card */
+.bus-crmv {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bus-crmv-ico {
+  width: 36px; height: 36px;
+  background: var(--br);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  min-width: 36px;
+}
+.bus-crmv-txt strong { display: block; font-size: 13px; color: var(--wh); }
+.bus-crmv-txt span   { font-size: 11px; color: rgba(255, 255, 255, .45); }
+
+
+/* ─────────────────────────────────────────────────────────────
+   4. PRÓXIMOS MUTIRÕES — Cards de eventos
+   ───────────────────────────────────────────────────────────── */
+
+.eventos { padding: 80px 2rem; background: var(--wh); }
+.eventos-inner { max-width: 1080px; margin: 0 auto; }
+
+.eventos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.eventos-note {
+  font-size: 12px;
+  color: var(--mu);
+  line-height: 1.6;
+  max-width: 300px;
+  text-align: right;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* Card de evento individual */
+.evento-card {
+  border: 1px solid rgba(14, 125, 143, .1);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--wh);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.evento-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(11, 94, 108, .1); }
+
+/* Barra colorida do topo do card (indica o status) */
+.evento-top       { height: 6px; width: 100%; }
+.evento-top-open  { background: #27ae60; } /* verde  = inscrições abertas  */
+.evento-top-few   { background: #e67e22; } /* laranja = últimas vagas       */
+.evento-top-full  { background: #e74c3c; } /* vermelho = vagas esgotadas    */
+.evento-top-soon  { background: var(--mu); } /* cinza = em breve            */
+
+.evento-body { padding: 22px 22px 20px; }
+
+/* Badge de status (texto dentro do card) */
+.evento-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+.badge-open { background: rgba(39, 174, 96, .1);  color: #27ae60; }
+.badge-few  { background: rgba(230, 126, 34, .1); color: #e67e22; }
+.badge-full { background: rgba(231, 76, 60, .1);  color: #e74c3c; }
+.badge-soon { background: rgba(74, 122, 131, .1); color: var(--mu); }
+
+/* Data do evento */
+.evento-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--tx);
+  margin-bottom: 8px;
+}
+.evento-date-ico { color: var(--br); font-size: 16px; }
+
+/* Local do evento */
+.evento-local {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--mu);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.evento-local-ico { color: var(--md); margin-top: 1px; }
+
+/* Info de vagas disponíveis */
+.evento-vagas {
+  font-size: 11px;
+  color: var(--mu);
+  margin-bottom: 18px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(14, 125, 143, .07);
+}
+.evento-vagas strong { color: var(--tx); }
+
+
+/* ─────────────────────────────────────────────────────────────
+   5. MAPA DO ITINERÁRIO — Linha do tempo de cidades
+   ───────────────────────────────────────────────────────────── */
+
+.itinerario { padding: 80px 2rem; background: var(--ltr); }
+.itinerario-inner { max-width: 1080px; margin: 0 auto; }
+
+.rota-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  margin-top: 48px;
+  position: relative;
+}
+
+/* Linha horizontal que conecta os meses */
+.rota-grid::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--br), rgba(26, 200, 212, .2));
+  z-index: 0;
+}
+
+.rota-mes {
+  position: relative;
+  z-index: 1;
+  padding: 0 16px 0 0;
+}
+
+/* Linha com o ponto + label do mês */
+.rota-dot-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* Ponto preenchido = mês confirmado */
+.rota-dot {
+  width: 14px; height: 14px;
+  background: var(--br);
+  border-radius: 50%;
+  border: 3px solid var(--lt);
+  box-shadow: 0 0 0 2px var(--br);
+  min-width: 14px;
+}
+
+/* Ponto vazio = mês futuro/a confirmar */
+.rota-dot-future {
+  background: var(--wh);
+  border: 2px solid var(--mu);
+  box-shadow: none;
+}
+
+.rota-mes-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--md);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+/* Lista de cidades dentro de cada mês */
+.rota-cidades {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rota-cidade {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--tx);
+}
+.rota-cidade-ico { color: var(--br); font-size: 12px; margin-top: 1px; }
+.rota-cidade-sub { font-size: 11px; color: var(--mu); }
+
+/* Meses futuros aparecem mais apagados */
+.rota-future .rota-cidade    { color: var(--mu); }
+.rota-future .rota-mes-label { color: var(--mu); }
+
+
+/* ─────────────────────────────────────────────────────────────
+   6. IMPACTO — Contadores de resultado (fundo escuro)
+   ───────────────────────────────────────────────────────────── */
+
+.impacto { background: var(--dk); padding: 80px 2rem; text-align: center; }
+
+.impacto-grid {
+  max-width: 1080px;
+  margin: 48px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.impacto-card {
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(26, 200, 212, .1);
+  border-radius: var(--r);
+  padding: 32px 20px;
+  transition: background var(--transition), border-color var(--transition);
+}
+.impacto-card:hover { background: rgba(255, 255, 255, .07); border-color: rgba(26, 200, 212, .22); }
+
+/* Número grande (ex: "+2.800") */
+.impacto-num {
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--br);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.impacto-card h3 { font-size: 14px; font-weight: 500; color: var(--wh); margin-bottom: 6px; }
+.impacto-card p  { font-size: 12px; color: rgba(255, 255, 255, .45); line-height: 1.6; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   7. GALERIA — Grid de fotos de operações anteriores
+   ───────────────────────────────────────────────────────────── */
+
+.galeria { padding: 80px 2rem; background: var(--wh); }
+.galeria-inner { max-width: 1080px; margin: 0 auto; }
+
+/* Grid assimétrico de 12 colunas, 2 linhas */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 220px 220px;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.gal-item {
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--lt);
+  position: relative;
+}
+.gal-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gal-item:hover img { transform: scale(1.05); }
+
+/* Tamanhos das fotos na primeira linha */
+.gal-item:nth-child(1) { grid-column: span 5; }
+.gal-item:nth-child(2) { grid-column: span 4; }
+.gal-item:nth-child(3) { grid-column: span 3; }
+
+/* Tamanhos das fotos na segunda linha */
+.gal-item:nth-child(4) { grid-column: span 3; }
+.gal-item:nth-child(5) { grid-column: span 5; }
+.gal-item:nth-child(6) { grid-column: span 4; }
+
+/* Legenda sobre a foto (cidade + data) */
+.gal-label {
+  position: absolute;
+  bottom: 10px; left: 10px;
+  background: rgba(7, 30, 36, .75);
+  color: var(--wh);
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-weight: 500;
+  letter-spacing: .3px;
+  backdrop-filter: blur(4px);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   8. B2G — Seção institucional para Prefeituras e Secretarias
+   ───────────────────────────────────────────────────────────── */
+
+.b2g { background: #071e24; padding: 80px 2rem; }
+.b2g-inner { max-width: 1080px; margin: 0 auto; }
+
+.b2g-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 52px;
+}
+
+/* Etiqueta "Setor Público" */
+.b2g-tag {
+  display: inline-block;
+  background: rgba(26, 200, 212, .1);
+  border: 1px solid rgba(26, 200, 212, .2);
+  color: var(--br);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 100px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.b2g-header h2 { font-size: clamp(22px, 2.8vw, 34px); font-weight: 500; color: var(--wh); line-height: 1.25; margin-bottom: 14px; }
+.b2g-header p  { font-size: 14px; color: rgba(255, 255, 255, .5); line-height: 1.8; margin-bottom: 28px; }
+
+.b2g-cta-group { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+
+/* Botão secundário (contorno branco) */
+.b2g-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--rs);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1.5px solid rgba(255, 255, 255, .18);
+  color: rgba(255, 255, 255, .7);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+  text-decoration: none;
+}
+.b2g-btn-outline:hover { border-color: var(--br); color: var(--br); }
+
+/* Cards de diferenciais institucionais */
+.b2g-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.b2g-card {
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-top: 3px solid rgba(26, 200, 212, .4);
+  border-radius: var(--r);
+  padding: 24px 20px;
+  background: rgba(255, 255, 255, .03);
+  transition: background var(--transition);
+}
+.b2g-card:hover { background: rgba(255, 255, 255, .05); }
+.b2g-card-ico   { font-size: 24px; margin-bottom: 12px; display: block; }
+.b2g-card h4    { font-size: 13px; font-weight: 500; color: var(--wh); margin-bottom: 6px; }
+.b2g-card p     { font-size: 12px; color: rgba(255, 255, 255, .4); line-height: 1.65; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   9. CTA FINAL — "Quer o Castramóvel na sua cidade?"
+   ───────────────────────────────────────────────────────────── */
+
+.mut-cta { background: var(--lt); padding: 72px 2rem; text-align: center; }
+.mut-cta h2 {
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 500;
+  color: var(--tx);
+  max-width: 540px;
+  margin: 0 auto 12px;
+  line-height: 1.3;
+}
+.mut-cta p {
+  font-size: 15px;
+  color: var(--mu);
+  max-width: 460px;
+  margin: 0 auto 32px;
+  line-height: 1.75;
+}
+
+.mut-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* Botão "← Voltar para a Clínica" */
+.btn-outline-dk {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: var(--r);
+  font-size: 15px;
+  font-weight: 500;
+  border: 1.5px solid rgba(11, 94, 108, .3);
+  color: var(--dk);
+  background: transparent;
+  text-decoration: none;
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+.btn-outline-dk:hover { border-color: var(--dk); transform: translateY(-2px); }
+
+
+/* ─────────────────────────────────────────────────────────────
+   10. RESPONSIVO
+   ───────────────────────────────────────────────────────────── */
+
+/* Desktop médio (≤ 1024px) */
+@media (max-width: 1024px) {
+  .b2g-header { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* Tablet (≤ 768px) */
+@media (max-width: 768px) {
+  .mut-hero          { padding: 52px 1.25rem 44px; }
+  .castramovel       { padding: 60px 1.25rem; }
+  .castramovel-grid  { grid-template-columns: 1fr; gap: 36px; }
+  .castramovel-visual { order: -1; } /* card visual fica acima no celular */
+  .eventos           { padding: 60px 1.25rem; }
+  .eventos-header    { flex-direction: column; align-items: flex-start; }
+  .eventos-note      { text-align: left; max-width: 100%; }
+  .itinerario        { padding: 60px 1.25rem; }
+  .rota-grid::before { display: none; }
+  .rota-grid         { grid-template-columns: 1fr 1fr; }
+  .impacto           { padding: 60px 1.25rem; }
+  .galeria           { padding: 60px 1.25rem; }
+  .galeria-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+  .gal-item          { grid-column: span 1 !important; height: 160px; }
+  .b2g               { padding: 60px 1.25rem; }
+  .b2g-cta-group     { flex-direction: row; flex-wrap: wrap; }
+  .mut-cta           { padding: 56px 1.25rem; }
+  .mut-divd          { display: none; }
+  .mut-hero-stats    { gap: 20px; }
+}
+
+/* Celular médio (≤ 480px) */
+@media (max-width: 480px) {
+  .eventos-grid   { grid-template-columns: 1fr; }
+  .rota-grid      { grid-template-columns: 1fr; }
+  .galeria-grid   { grid-template-columns: 1fr; }
+  .gal-item       { height: 200px; }
+  .impacto-grid   { grid-template-columns: 1fr 1fr; }
+  .b2g-cards      { grid-template-columns: 1fr; }
+  .mut-hero-ctas  { flex-direction: column; align-items: center; }
+  .mut-hero-ctas .btn { width: 100%; max-width: 300px; }
+  .mut-cta-btns   { flex-direction: column; align-items: center; }
+  .mut-cta-btns .btn, .btn-outline-dk { width: 100%; max-width: 300px; justify-content: center; }
+}

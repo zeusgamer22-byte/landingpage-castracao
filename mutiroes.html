@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mutirões de Castração — Vet Viajante</title>
+  <meta name="description" content="Mutirões de castração com o Castramóvel da Vet Viajante. Controle populacional ético para cães e gatos. Veja a agenda e garanta sua vaga." />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231ac8d4'/%3E%3Crect x='18' y='21' width='28' height='24' rx='4' fill='none' stroke='%23ffffff' stroke-width='4'/%3E%3Cpath d='M24 17v8M40 17v8M18 29h28' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='m27 37 4 4 7-8' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mutiroes.css" />
+</head>
+<body>
+
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║           GUIA RÁPIDO DE EDIÇÃO — mutiroes.html              ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  PARA EDITAR UM EVENTO (card de mutirão)                     ║
+║  Cada evento é um bloco <div class="evento-card">           ║
+║  Dentro dele você pode trocar:                               ║
+║  • class="evento-date"   → data do evento                   ║
+║  • class="evento-local"  → cidade e endereço                ║
+║  • class="evento-vagas"  → informação de vagas              ║
+║  • href="https://wa.me/..."  → link do botão                ║
+║                                                              ║
+║  STATUS DO EVENTO — troque a cor da barra e o badge:        ║
+║  • Inscrições abertas  → evento-top-open  / badge-open      ║
+║  • Últimas vagas       → evento-top-few   / badge-few       ║
+║  • Vagas esgotadas     → evento-top-full  / badge-full      ║
+║  • Em breve            → evento-top-soon  / badge-soon      ║
+║                                                              ║
+║  PARA EDITAR O ITINERÁRIO (mapa de cidades)                 ║
+║  Busque "MAPA DO ITINERÁRIO" (Ctrl+F) e edite               ║
+║  os nomes das cidades, datas e status das bolinhas          ║
+║  (rota-dot = confirmado / rota-dot-future = a confirmar)    ║
+║                                                              ║
+║  PARA EDITAR OS CONTADORES DE IMPACTO                       ║
+║  Busque "IMPACTO" (Ctrl+F) e edite os valores               ║
+║  dentro de <div class="impacto-num">                        ║
+║                                                              ║
+║  NÚMERO DO WHATSAPP                                          ║
+║  Busque "553491026420" (Ctrl+F) e substitua                 ║
+║  pelo novo número em todos os links                         ║
+╚══════════════════════════════════════════════════════════════╝
+-->
+
+  <!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+  <header class="hd" id="inicio">
+    <a href="index.html" class="hd-logo">
+      <div class="hd-paw">🐾</div>
+      <div class="hd-name">Vet <span>Viajante</span></div>
+    </a>
+    <nav class="hd-nav" id="hd-nav" aria-label="Navegação principal">
+      <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#depoimentos">Depoimentos</a>
+      <a href="mutiroes.html" class="hd-nav-active" aria-current="page">🚌 Mutirões</a>
+      <a href="shopping.html">🛍️ Shopping</a>
+      <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20*Vet%20Viajante*." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Agendar consulta</a>
+    </nav>
+    <button class="hd-hamburger" id="hd-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="hd-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+  <section class="mut-hero">
+    <div class="mut-eyebrow">🚌 &nbsp;Saúde Pública Animal</div>
+    <h1>Castração solidária. <em>Ciência, ética</em> e impacto real.</h1>
+    <p class="mut-hero-sub">O Castramóvel da Vet Viajante leva cirurgia segura e equipe especializada diretamente à sua comunidade — sem deslocamento, sem burocracia, com todo o rigor do CRMV-MG.</p>
+    <div class="mut-hero-ctas reveal">
+      <a href="#proximos" class="btn btn-primary btn-lg">📅 Ver próximas datas</a>
+      <a href="#prefeituras" class="btn btn-outline btn-lg">🏛️ Sou de prefeitura</a>
+    </div>
+    <div class="mut-hero-stats reveal">
+      <div class="mut-stat"><strong id="cnt-animais">8.800+</strong><span>animais castrados</span></div>
+      <div class="mut-divd"></div>
+      <div class="mut-stat"><strong>18</strong><span>municípios atendidos</span></div>
+      <div class="mut-divd"></div>
+      <div class="mut-stat"><strong>0%</strong><span>complicações cirúrgicas</span></div>
+      <div class="mut-divd"></div>
+      <div class="mut-stat"><strong>3</strong><span>anos de operação</span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CASTRAMÓVEL ══════════════════════════════ -->
+  <section class="castramovel" id="castramovel">
+    <div class="castramovel-grid">
+
+      <div class="castramovel-content reveal">
+        <span class="tag">Nossa Unidade Móvel</span>
+        <h2>O Castramóvel: um centro cirúrgico completo sobre rodas.</h2>
+        <p>Projetado para operar em qualquer município, o Castramóvel da Vet Viajante atende rigorosamente às normas do CRMV-MG, garantindo ambiente cirúrgico estéril, seguro e totalmente equipado — independente da infraestrutura local.</p>
+        <p>Cada operação conta com equipe de 2 veterinários cirurgiões e 3 auxiliares treinados, seguindo o mesmo protocolo de biossegurança da nossa clínica fixa.</p>
+
+        <div class="cm-specs">
+          <div class="cm-spec">
+            <span class="cm-spec-ico">🔬</span>
+            <div class="cm-spec-txt">
+              <strong>Anestesia inalatória monitorada</strong>
+              <span>Oximetria, pressão e frequência cardíaca durante todo o procedimento</span>
+            </div>
+          </div>
+          <div class="cm-spec">
+            <span class="cm-spec-ico">🧼</span>
+            <div class="cm-spec-txt">
+              <strong>Esterilização em autoclave própria</strong>
+              <span>Todo instrumental esterilizado no próprio veículo antes de cada cirurgia</span>
+            </div>
+          </div>
+          <div class="cm-spec">
+            <span class="cm-spec-ico">💡</span>
+            <div class="cm-spec-txt">
+              <strong>Iluminação cirúrgica profissional</strong>
+              <span>Refletor de LED de alta potência equivalente ao de clínicas de referência</span>
+            </div>
+          </div>
+          <div class="cm-spec">
+            <span class="cm-spec-ico">⚡</span>
+            <div class="cm-spec-txt">
+              <strong>Gerador independente</strong>
+              <span>Autonomia energética total — operação garantida sem depender da rede local</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="castramovel-visual reveal">
+        <div class="bus-card">
+          <span class="bus-icon">🚐</span>
+          <h3>Castramóvel Vet Viajante</h3>
+          <p>Equipado e homologado conforme a Resolução CFMV nº 1.236/2019 para clínicas veterinárias itinerantes.</p>
+          <div class="bus-badges">
+            <span class="bus-badge">Autoclave classe B</span>
+            <span class="bus-badge">Anestesia inalatória</span>
+            <span class="bus-badge">Oxímetro digital</span>
+            <span class="bus-badge">Gerador próprio</span>
+            <span class="bus-badge">Pré e pós-operatório</span>
+          </div>
+          <div class="bus-crmv">
+            <div class="bus-crmv-ico">🏅</div>
+            <div class="bus-crmv-txt">
+              <strong>Homologado pelo CRMV-MG</strong>
+              <span>Documentação completa disponível para órgãos públicos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ PRÓXIMOS MUTIRÕES ══════════════════════════════ -->
+  <section class="eventos" id="proximos">
+    <div class="eventos-inner">
+      <div class="eventos-header">
+        <div>
+          <span class="tag">Agenda 2026</span>
+          <h2 class="st">Próximos Mutirões</h2>
+        </div>
+        <p class="eventos-note">As inscrições são gratuitas e realizadas via WhatsApp. Vagas limitadas por evento.</p>
+      </div>
+
+      <div class="eventos-grid">
+
+        <!-- Evento 1 -->
+        <div class="evento-card reveal">
+          <div class="evento-top evento-top-open"></div>
+          <div class="evento-body">
+            <span class="evento-status-badge badge-open">● Inscrições Abertas</span>
+            <div class="evento-date">
+              <span class="evento-date-ico">📅</span>
+              25 e 26 de Abril de 2026
+            </div>
+            <div class="evento-local">
+              <span class="evento-local-ico">📍</span>
+              <div>
+                <div>Igarapava - SP</div>
+                <div class="rota-cidade-sub">Circuito confirmado para o fim de abril</div>
+                <div class="rota-cidade-sub">Atendimento previsto para Igarapava e cidades vizinhas, com ponto de apoio enviado na confirmação.</div>
+              </div>
+            </div>
+            <div class="evento-vagas">
+              Inscrições abertas para o mutirão de <strong>25 e 26 de Abril</strong>, com triagem via WhatsApp e atendimento para cães e gatos da cidade e região.
+            </div>
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Mutir%C3%A3o%20em%20Igarapava%20-%20SP.%20Como%20funciona%20a%20inscri%C3%A7%C3%A3o%3F"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">💬 Garantir minha vaga</a>
+          </div>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="evento-card reveal">
+          <div class="evento-top evento-top-open"></div>
+          <div class="evento-body">
+            <span class="evento-status-badge badge-open">● Inscrições Abertas</span>
+            <div class="evento-date">
+              <span class="evento-date-ico">📅</span>
+              27 e 28 de Abril de 2026
+            </div>
+            <div class="evento-local">
+              <span class="evento-local-ico">📍</span>
+              <div>
+                <div>Jubaí (Conquista) - MG</div>
+                <div class="rota-cidade-sub">Circuito confirmado para o fim de abril</div>
+                <div class="rota-cidade-sub">Atendimento voltado para Jubaí, Conquista e entorno, com local de apoio informado na confirmação.</div>
+              </div>
+            </div>
+            <div class="evento-vagas">
+              Inscrições abertas para o mutirão de <strong>27 e 28 de Abril</strong>, com organização prévia das inscrições e orientações completas no WhatsApp.
+            </div>
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Mutir%C3%A3o%20em%20Juba%C3%AD%20%28Conquista%29%20-%20MG.%20Como%20funciona%20a%20inscri%C3%A7%C3%A3o%3F"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">💬 Garantir minha vaga</a>
+          </div>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="evento-card reveal">
+          <div class="evento-top evento-top-open"></div>
+          <div class="evento-body">
+            <span class="evento-status-badge badge-open">● Inscrições Abertas</span>
+            <div class="evento-date">
+              <span class="evento-date-ico">📅</span>
+              Maio de 2026 (datas a definir)
+            </div>
+            <div class="evento-local">
+              <span class="evento-local-ico">📍</span>
+              <div>
+                <div>Gonçalves - MG</div>
+                <div class="rota-cidade-sub">Cidade confirmada para a etapa de maio</div>
+                <div class="rota-cidade-sub">Datas finais e ponto de apoio serão enviados aos inscritos assim que a agenda local for fechada.</div>
+              </div>
+            </div>
+            <div class="evento-vagas">
+              Inscrições abertas com <strong>datas a definir</strong>, e a programação completa de Gonçalves será compartilhada diretamente com os tutores cadastrados.
+            </div>
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Mutir%C3%A3o%20em%20Gon%C3%A7alves%20-%20MG.%20Como%20funciona%20a%20inscri%C3%A7%C3%A3o%3F"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">💬 Garantir minha vaga</a>
+          </div>
+        </div>
+
+        <!-- Evento 4 -->
+        <div class="evento-card reveal">
+          <div class="evento-top evento-top-open"></div>
+          <div class="evento-body">
+            <span class="evento-status-badge badge-open">● Inscrições Abertas</span>
+            <div class="evento-date">
+              <span class="evento-date-ico">📅</span>
+              Julho de 2026 (datas a definir)
+            </div>
+            <div class="evento-local">
+              <span class="evento-local-ico">📍</span>
+              <div>
+                <div>Vera - MT</div>
+                <div class="rota-cidade-sub">Cidade confirmada na rota de julho</div>
+                <div class="rota-cidade-sub">Atendimento previsto para Vera e municípios próximos, com endereço operacional informado na confirmação.</div>
+              </div>
+            </div>
+            <div class="evento-vagas">
+              Inscrições abertas com <strong>datas a definir</strong>, e as informações finais sobre datas e estrutura local serão enviadas pelo WhatsApp.
+            </div>
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Mutir%C3%A3o%20em%20Vera%20-%20MT.%20Como%20funciona%20a%20inscri%C3%A7%C3%A3o%3F"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">💬 Garantir minha vaga</a>
+          </div>
+        </div>
+
+        <!-- Evento 5 -->
+        <div class="evento-card reveal">
+          <div class="evento-top evento-top-open"></div>
+          <div class="evento-body">
+            <span class="evento-status-badge badge-open">● Inscrições Abertas</span>
+            <div class="evento-date">
+              <span class="evento-date-ico">📅</span>
+              Julho de 2026 (datas a definir)
+            </div>
+            <div class="evento-local">
+              <span class="evento-local-ico">📍</span>
+              <div>
+                <div>Feliz Natal - MT</div>
+                <div class="rota-cidade-sub">Cidade confirmada na rota de julho</div>
+                <div class="rota-cidade-sub">Atendimento pensado para Feliz Natal e região, com ponto de apoio comunicado após a confirmação da agenda.</div>
+              </div>
+            </div>
+            <div class="evento-vagas">
+              Inscrições abertas com <strong>datas a definir</strong>, incluindo aviso antecipado sobre local, horário e orientações para os tutores inscritos.
+            </div>
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Mutir%C3%A3o%20em%20Feliz%20Natal%20-%20MT.%20Como%20funciona%20a%20inscri%C3%A7%C3%A3o%3F"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">💬 Garantir minha vaga</a>
+          </div>
+        </div>
+
+        <!-- Evento 6 -->
+        <div class="evento-card reveal">
+          <div class="evento-top evento-top-open"></div>
+          <div class="evento-body">
+            <span class="evento-status-badge badge-open">● Inscrições Abertas</span>
+            <div class="evento-date">
+              <span class="evento-date-ico">📅</span>
+              Agosto de 2026 (datas a definir)
+            </div>
+            <div class="evento-local">
+              <span class="evento-local-ico">📍</span>
+              <div>
+                <div>Acre (Estado)</div>
+                <div class="rota-cidade-sub">Etapa estadual confirmada para agosto</div>
+                <div class="rota-cidade-sub">Município-base e ponto de atendimento serão divulgados aos inscritos assim que a operação local for definida.</div>
+              </div>
+            </div>
+            <div class="evento-vagas">
+              Inscrições abertas com <strong>datas a definir</strong>, e a agenda do Acre será organizada por município-base com comunicação direta no WhatsApp.
+            </div>
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Mutir%C3%A3o%20no%20Acre%20%28Estado%29.%20Como%20funciona%20a%20inscri%C3%A7%C3%A3o%3F"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">💬 Garantir minha vaga</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAPA DO ITINERÁRIO ══════════════════════════════ -->
+  <section class="itinerario" id="itinerario">
+    <div class="itinerario-inner">
+      <div class="text-center">
+        <span class="tag reveal">Rota 2026</span>
+        <h2 class="st reveal">Mapa do Itinerário</h2>
+        <p class="sd reveal">Acompanhe para onde o Castramóvel vai nos próximos meses. Novas datas são anunciadas com 30 dias de antecedência.</p>
+      </div>
+      <div class="rota-grid reveal">
+
+        <div class="rota-mes">
+          <div class="rota-dot-row">
+            <div class="rota-dot"></div>
+            <span class="rota-mes-label">Abril 2026</span>
+          </div>
+          <div class="rota-cidades">
+            <div class="rota-cidade">
+              <span class="rota-cidade-ico">📍</span>
+              <div>
+                <div>Igarapava - SP</div>
+                <div class="rota-cidade-sub">25 e 26 Abr · Confirmado</div>
+                <div class="rota-cidade-sub">Atendimento para a cidade e municípios vizinhos</div>
+              </div>
+            </div>
+            <div class="rota-cidade">
+              <span class="rota-cidade-ico">📍</span>
+              <div>
+                <div>Jubaí (Conquista) - MG</div>
+                <div class="rota-cidade-sub">27 e 28 Abr · Confirmado</div>
+                <div class="rota-cidade-sub">Base regional para Conquista e entorno</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rota-mes">
+          <div class="rota-dot-row">
+            <div class="rota-dot"></div>
+            <span class="rota-mes-label">Maio 2026</span>
+          </div>
+          <div class="rota-cidades">
+            <div class="rota-cidade">
+              <span class="rota-cidade-ico">📍</span>
+              <div>
+                <div>Gonçalves - MG</div>
+                <div class="rota-cidade-sub">Maio · Datas a definir</div>
+                <div class="rota-cidade-sub">Agenda local em fechamento com ponto de apoio a confirmar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rota-mes rota-future">
+          <div class="rota-dot-row">
+            <div class="rota-dot rota-dot-future"></div>
+            <span class="rota-mes-label">Julho 2026</span>
+          </div>
+          <div class="rota-cidades">
+            <div class="rota-cidade">
+              <span class="rota-cidade-ico">📌</span>
+              <div>
+                <div>Vera - MT</div>
+                <div class="rota-cidade-sub">Julho · Datas a definir</div>
+                <div class="rota-cidade-sub">Rota prevista para atendimento local e regional</div>
+              </div>
+            </div>
+            <div class="rota-cidade">
+              <span class="rota-cidade-ico">📌</span>
+              <div>
+                <div>Feliz Natal - MT</div>
+                <div class="rota-cidade-sub">Julho · Datas a definir</div>
+                <div class="rota-cidade-sub">Etapa do circuito com apoio à região próxima</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rota-mes rota-future">
+          <div class="rota-dot-row">
+            <div class="rota-dot rota-dot-future"></div>
+            <span class="rota-mes-label">Agosto 2026</span>
+          </div>
+          <div class="rota-cidades">
+            <div class="rota-cidade">
+              <span class="rota-cidade-ico">❓</span>
+              <div>
+                <div>Acre (Estado)</div>
+                <div class="rota-cidade-sub">Agosto · Datas a definir</div>
+                <div class="rota-cidade-sub">Município-base será divulgado após definição operacional</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ IMPACTO ══════════════════════════════ -->
+  <section class="impacto" id="impacto">
+    <div class="container">
+      <span class="tag tag-inv reveal">Mutirões Realizados</span>
+      <h2 class="st st-inv reveal">Três anos de presença onde mais importa.</h2>
+      <p class="sd sd-inv reveal">Cada número representa uma família que confia, um animal que vai viver melhor e uma comunidade que muda.</p>
+      <div class="impacto-grid">
+        <div class="impacto-card reveal">
+          <div class="impacto-num">+2.800</div>
+          <h3>Animais castrados</h3>
+          <p>Cães e gatos atendidos desde 2023, com controle rigoroso de cada procedimento</p>
+        </div>
+        <div class="impacto-card reveal">
+          <div class="impacto-num">18</div>
+          <h3>Municípios atendidos</h3>
+          <p>Cidades no Vale do Aço e Região Metropolitana de BH já receberam o Castramóvel</p>
+        </div>
+        <div class="impacto-card reveal">
+          <div class="impacto-num">0%</div>
+          <h3>Complicações cirúrgicas</h3>
+          <p>Protocolo rigoroso com anestesia monitorada garante segurança em campo aberto</p>
+        </div>
+        <div class="impacto-card reveal">
+          <div class="impacto-num">47</div>
+          <h3>Mutirões realizados</h3>
+          <p>Eventos em comunidades, parceria com prefeituras e ações privadas de responsabilidade social</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ GALERIA ══════════════════════════════ -->
+  <section class="galeria" id="galeria">
+    <div class="galeria-inner">
+      <div class="text-center">
+        <span class="tag reveal">Galeria</span>
+        <h2 class="st reveal">Operações anteriores</h2>
+        <p class="sd reveal">Imagens reais das nossas ações em campo. Equipe dedicada, ambiente controlado, resultados concretos.</p>
+      </div>
+      <div class="galeria-grid reveal">
+        <div class="gal-item">
+          <img src="diegoonibus.jpeg"
+               alt="Veterinário examinando animal durante mutirão" loading="lazy"
+               onerror="this.style.display='none'" />
+        </div>
+        <div class="gal-item">
+          <img src="cartaz.jpeg"
+               alt="Equipe veterinária em ação" loading="lazy"
+               onerror="this.style.display='none'" />
+        </div>
+        <div class="gal-item">
+          <img src="onibus.jpeg"
+               alt="Cão sendo cuidado pela equipe" loading="lazy"
+               onerror="this.style.display='none'" />
+        </div>
+        <div class="gal-item">
+          <img src="williancao.jpeg"
+               alt="Veterinário em consulta" loading="lazy"
+               onerror="this.style.display='none'" />
+        </div>
+        <div class="gal-item">
+          <img src="gatospos.jpeg"
+               alt="Pet sendo cuidado no pós-operatório" loading="lazy"
+               onerror="this.style.display='none'" />
+        </div>
+        <div class="gal-item">
+          <img src="equipeonibus.jpeg"
+               alt="Animais recuperados após castração" loading="lazy"
+               onerror="this.style.display='none'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ B2G — PREFEITURAS ══════════════════════════════ -->
+  <section class="b2g" id="prefeituras">
+    <div class="b2g-inner">
+
+      <div class="b2g-header reveal">
+        <div>
+          <span class="b2g-tag">🏛️ Setor Público</span>
+          <h2>Prefeituras e Secretarias de Saúde</h2>
+          <p>A Vet Viajante está habilitada para participar de licitações e estabelecer parcerias público-privadas voltadas ao controle populacional ético de cães e gatos. Nossa atuação está alinhada às diretrizes do Ministério da Saúde para zoonoses.</p>
+          <div class="b2g-cta-group">
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Sou%20gestor(a)%20p%C3%BAblico(a)%20e%20gostaria%20de%20solicitar%20uma%20*proposta%20técnica*%20para%20parceria%20no%20Mutitr%C3%A3o%20de%20Castra%C3%A7%C3%A3o%20da%20Vet%20Viajante."
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">💬 Solicitar proposta técnica</a>
+            <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Sou%20de%20uma%20secretaria%20e%20gostaria%20de%20receber%20a%20*documenta%C3%A7%C3%A3o%20completa*%20da%20Vet%20Viajante%20para%20an%C3%A1lise%20de%20licita%C3%A7%C3%A3o."
+               target="_blank" rel="noopener noreferrer" class="b2g-btn-outline">📄 Solicitar documentação</a>
+          </div>
+        </div>
+        <div>
+          <div class="b2g-cards">
+            <div class="b2g-card">
+              <span class="b2g-card-ico">📋</span>
+              <h4>Habilitada para licitações</h4>
+              <p>CNPJ ativo, CRMV-MG em dia e documentação completa para participar de processos licitatórios municipais e estaduais.</p>
+            </div>
+            <div class="b2g-card">
+              <span class="b2g-card-ico">📊</span>
+              <h4>Relatório técnico pós-evento</h4>
+              <p>Entregamos laudo técnico detalhado com número de procedimentos, espécies, sexo e localização geográfica de cada animal atendido.</p>
+            </div>
+            <div class="b2g-card">
+              <span class="b2g-card-ico">🤝</span>
+              <h4>Parcerias público-privadas</h4>
+              <p>Atuamos em regime de parceria com secretarias de saúde, meio ambiente e assistência social, com possibilidade de cofinanciamento.</p>
+            </div>
+            <div class="b2g-card">
+              <span class="b2g-card-ico">🗺️</span>
+              <h4>Planejamento de rota</h4>
+              <p>Adaptamos o calendário de itinerário conforme a demanda e prioridade do município parceiro, com aviso prévio de 60 dias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CTA FINAL ══════════════════════════════ -->
+  <section class="mut-cta">
+    <div class="container">
+      <h2 class="reveal">Quer o Castramóvel na sua cidade?</h2>
+      <p class="reveal">Seja tutor, ONG ou gestor público — fale com a gente. Avaliamos cada caso com atenção e transparência.</p>
+      <div class="mut-cta-btns reveal">
+        <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Quero%20saber%20como%20trazer%20o%20Castramóvel%20da%20Vet%20Viajante%20para%20minha%20cidade."
+           target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">💬 Falar com a equipe</a>
+        <a href="index.html" class="btn-outline-dk">← Voltar para a Clínica</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ft-grid">
+        <div class="ft-brand">
+          <h3>Vet <span>Viajante</span></h3>
+          <p>Medicina veterinária de excelência em clínica fixa e ações itinerantes de saúde pública animal.</p>
+        </div>
+        <div class="ft-col">
+          <h4>Mutirões</h4>
+          <a href="#proximos">Próximas datas</a>
+          <a href="#itinerario">Itinerário</a>
+          <a href="#impacto">Nosso impacto</a>
+          <a href="#prefeituras">Para prefeituras</a>
+        </div>
+        <div class="ft-col">
+          <h4>Clínica</h4>
+          <a href="index.html#servicos">Consultas</a>
+          <a href="index.html#servicos">Cirurgias</a>
+          <a href="index.html#calculadora">Calculadora NER</a>
+          <a href="shopping.html">Shopping</a>
+        </div>
+        <div class="ft-col">
+          <h4>Contato</h4>
+          <a href="https://wa.me/553491026420" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://www.instagram.com/vet_viajante/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="index.html#sobre">Sobre nós</a>
+          <a href="index.html#depoimentos">Depoimentos</a>
+        </div>
+      </div>
+      <div class="ft-bot">
+        <p>© 2024 Vet Viajante · Todos os direitos reservados · CRMV-MG certificado</p>
+        <div class="soc">
+          <a href="#" class="soc-b" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/553491026420" class="soc-b" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="#" class="soc-b" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FIXO -->
+  <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20os%20Mutitr%C3%B5es%20de%20Castra%C3%A7%C3%A3o%20da%20Vet%20Viajante."
+     target="_blank" rel="noopener noreferrer" class="wa"
+     title="Fale pelo WhatsApp" aria-label="Fale conosco pelo WhatsApp">💬</a>
+
+  <script>
+    // ── Nav hamburger ────────────────────────────────────────────
+    const navBtn = document.getElementById('hd-hamburger');
+    const navEl  = document.getElementById('hd-nav');
+    if (navBtn && navEl) {
+      navBtn.addEventListener('click', () => {
+        const open = navEl.classList.toggle('open');
+        navBtn.classList.toggle('open', open);
+        navBtn.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // ── Smooth scroll para âncoras internas ─────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const hd = document.querySelector('.hd');
+        const top = target.getBoundingClientRect().top + window.scrollY - (hd ? hd.offsetHeight : 0);
+        window.scrollTo({ top, behavior: 'smooth' });
+        navEl && navEl.classList.remove('open');
+        navBtn && navBtn.classList.remove('open');
+      });
+    });
+
+    // ── Scroll Reveal ────────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+      revealEls.forEach(el => obs.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+  </script>
+
+</body>
+</html>

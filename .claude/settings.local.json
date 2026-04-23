@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /home/miguel/Documentos/projetos/vetviajante/.*)",
+      "Bash(python3:*)"
+    ]
+  }
+}

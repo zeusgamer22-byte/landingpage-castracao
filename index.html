@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vet Viajante — Medicina Veterinária para Cães e Gatos</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Consultas, cirurgias e acompanhamento clínico especializado para cães e gatos até 25kg. Resultado de exames na hora. Agende sua consulta." />
+  <meta name="keywords" content="veterinário, clínica veterinária, castração, exames veterinários, dieta pet, vacinas, cães, gatos" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Vet Viajante" />
+
+  <!-- Open Graph / WhatsApp / Instagram -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vet Viajante" />
+  <meta property="og:title" content="Vet Viajante — Medicina Veterinária para Cães e Gatos" />
+  <meta property="og:description" content="Consultas, cirurgias e acompanhamento especializado. Diagnóstico rápido, cirurgia segura e cuidado de verdade para seu pet." />
+  <meta property="og:image" content="equipe1.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://vetviajante.com.br" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vet Viajante — Medicina Veterinária para Cães e Gatos" />
+  <meta name="twitter:description" content="Consultas, cirurgias e acompanhamento especializado. Diagnóstico rápido, cirurgia segura e cuidado de verdade." />
+  <meta name="twitter:image" content="equipe1.webp" />
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231ac8d4'/%3E%3Cpath d='M21 39c4.2-8.8 17.8-8.8 22 0 1.8 3.7 1.1 7.6-1.8 9.6-3.6 2.4-7.9.2-9.2-1.3-1.3 1.5-5.6 3.7-9.2 1.3-2.9-2-3.6-5.9-1.8-9.6Z' fill='%23ffffff'/%3E%3Ccircle cx='22' cy='23' r='4' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='18' r='4' fill='%23ffffff'/%3E%3Ccircle cx='42' cy='23' r='4' fill='%23ffffff'/%3E%3C/svg%3E"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║           GUIA RÁPIDO DE EDIÇÃO — index.html                 ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  ARQUIVOS DO PROJETO                                         ║
+║  • index.html     → Página principal da clínica (este)      ║
+║  • shopping.html  → Loja de produtos                        ║
+║  • mutiroes.html  → Agenda de mutirões de castração         ║
+║  • style.css      → Cores e estilos compartilhados          ║
+║  • shopping.css   → Estilos exclusivos da loja              ║
+║  • mutiroes.css   → Estilos exclusivos dos mutirões         ║
+║  • main.js        → Calculadora, FAQ e menu mobile          ║
+║                                                              ║
+║  O QUE EDITAR COM FREQUÊNCIA                                 ║
+║  • Número WhatsApp → busque "553491026420" (Ctrl+F)         ║
+║                       e substitua pelo novo número          ║
+║  • Foto da equipe  → troque "vetequipe.jpg" pelo            ║
+║                       nome do arquivo da nova foto          ║
+║  • Textos e títulos → edite o conteúdo entre as tags        ║
+║    Exemplo: <h2>Texto aqui</h2>  ou  <p>Texto aqui</p>     ║
+║  • Cores do site   → edite as variáveis em style.css        ║
+║                       (seção "Configurações de Cores")      ║
+║                                                              ║
+║  SEÇÕES DESTA PÁGINA (use Ctrl+F para localizar)            ║
+║  • HEADER     → menu de navegação                           ║
+║  • HERO       → banner principal com chamada e estatísticas ║
+║  • SOBRE      → "Quem somos" com foto da equipe             ║
+║  • SERVIÇOS   → 6 cards de serviços                         ║
+║  • CALCULADORA → ferramenta de nutrição (NER)               ║
+║  • DIFERENCIAIS → números e diferenciais da clínica         ║
+║  • DEPOIMENTOS → 3 avaliações de tutores                    ║
+║  • TRANSPARÊNCIA → perguntas respondidas                    ║
+║  • CTA        → botão de agendamento central                ║
+║  • FAQ        → perguntas e respostas expansíveis           ║
+║  • FOOTER     → rodapé com links                            ║
+╚══════════════════════════════════════════════════════════════╝
+-->
+
+  <!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+  <header class="hd" id="inicio">
+    <a href="#inicio" class="hd-logo">
+      <img src="vetviajantelogo.jpg" alt="Logo Vet Viajante" class="hd-paw" />
+      <div class="hd-name">Vet <span>Viajante</span></div>
+    </a>
+    <nav class="hd-nav" id="hd-nav" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a href="mutiroes.html">🚌 Mutirões</a>
+      <a href="shopping.html">🛍️ Shopping</a>
+      <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20*Vet%20Viajante*." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Agendar consulta</a>
+    </nav>
+    <button class="hd-hamburger" id="hd-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="hd-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-badge reveal"><img src="vetviajantelogo.jpg" alt="Logo" style="width: 24px; height: 24px; margin-right: 8px;" />Medicina veterinária de alto padrão</div>
+    <h1 class="reveal">Vet Viajante: Cuidado Veterinário Especializado que chega até seu pet.</h1>
+    <p class="hero-sub reveal">Consultas, cirurgias e acompanhamento clínico especializado para cães e gatos — com resultado de exames na hora e o carinho que seu animal merece.</p>
+    <div class="hero-ctas reveal">
+      <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20*Vet%20Viajante*." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Agendar agora</a>
+      <a href="#servicos" class="btn btn-outline btn-lg">Conhecer serviços</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hero-stat"><strong>+10.000</strong><span>pets atendidos</span></div>
+      <div class="divd"></div>
+      <div class="hero-stat"><strong>98%</strong><span>satisfação dos tutores</span></div>
+      <div class="divd"></div>
+      <div class="hero-stat"><strong>24h</strong><span>retorno de laudos</span></div>
+      <div class="divd"></div>
+      <div class="hero-stat"><strong>10 dias</strong><span>pós operátorio</span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ SOBRE ══════════════════════════════ -->
+  <section class="sec sec-lt" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-img-wrap reveal">
+          <img
+            src="equipe1.jpeg"
+            alt="Equipe veterinária da Vet Viajante"
+            loading="lazy"
+          />
+          <div class="sobre-img-overlay">
+            <div class="overlay-ico">🏅</div>
+            <div class="overlay-txt">
+              <strong>Equipe especializada</strong>
+              <span>CRMV-MG certificado</span>
+            </div>
+          </div>
+        </div>
+        <div class="sobre-content reveal">
+          <span class="tag">Quem somos</span>
+          <h2 class="st">Medicina veterinária sem distância, sem burocracia e sem espera.</h2>
+          <p>A Vet Viajante nasceu de um propósito simples: levar cuidado veterinário de excelência diretamente a quem precisa. Atendemos pequenos animais com foco total em diagnóstico rápido, cirurgia segura e acompanhamento humano.</p>
+          <p>Nossa equipe é formada por veterinários especializados em clínica geral e cirurgia de pequenos animais, utilizando equipamentos de última geração e protocolos reconhecidos internacionalmente.</p>
+          <div class="checks">
+            <div class="ck"><div class="ck-ico">✓</div><span>Corpo clínico especializado em pequenos animais</span></div>
+            <div class="ck"><div class="ck-ico">✓</div><span>Equipamentos modernos e protocolos seguros</span></div>
+            <div class="ck"><div class="ck-ico">✓</div><span>Atendimento humanizado para pet e tutor</span></div>
+            <div class="ck"><div class="ck-ico">✓</div><span>Laudos laboratoriais com resultado imediato</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ SERVIÇOS ══════════════════════════════ -->
+  <section class="sec sec-white text-center" id="servicos">
+    <div class="container">
+      <span class="tag reveal">Nossos serviços</span>
+      <h2 class="st reveal">Tudo que seu pet precisa, em um só lugar.</h2>
+      <p class="sd reveal">Do diagnóstico ao pós-operatório, uma linha completa de cuidados com a mesma exigência de uma clínica de referência.</p>
+      <div class="srv-grid">
+        <div class="srv reveal"><div class="srv-ic">🔬</div><h3>Exames de sangue</h3><p>Hemograma, bioquímico, hormônios — resultado na própria consulta, sem dias de espera.</p><span class="srv-bdg">⚡ Resultado na hora</span></div>
+        <div class="srv reveal"><div class="srv-ic">🏥</div><h3>Cirurgias</h3><p>Castração, nodulectomia e ortopedia com anestesia monitorada e protocolo rigoroso.</p><span class="srv-bdg">Alta qualidade</span></div>
+        <div class="srv reveal"><div class="srv-ic">🩺</div><h3>Consultas clínicas</h3><p>Avaliação completa com anamnese detalhada, exame físico e orientação personalizada.</p><span class="srv-bdg">Especializado</span></div>
+        <div class="srv reveal"><div class="srv-ic">🥗</div><h3>Dietas personalizadas</h3><p>Plano alimentar individualizado por veterinário nutrólogo conforme raça, peso e condição clínica.</p><span class="srv-bdg">Nutrição clínica</span></div>
+        <div class="srv reveal"><div class="srv-ic">💉</div><h3>Vacinas &amp; preventivos</h3><p>Protocolo vacinal completo, antipulgas, vermífugos e controle de ectoparasitas.</p><span class="srv-bdg">Protocolo atualizado</span></div>
+        <div class="srv reveal"><div class="srv-ic">📋</div><h3>Acompanhamento clínico</h3><p>Monitoramento de pets com doenças crônicas, pós-operatório assistido e retorno incluso.</p><span class="srv-bdg">Pós-cirúrgico incluso</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CALCULADORA ══════════════════════════════ -->
+  <section class="sec sec-ltr text-center" id="calculadora">
+    <div class="container">
+      <span class="tag reveal">Nutrição inteligente</span>
+      <h2 class="st reveal">Calculadora de Necessidade Energética</h2>
+      <p class="sd reveal">Descubra a Necessidade Energética de Repouso (NER) do seu pet — a base científica para um plano alimentar personalizado.</p>
+      <div class="calc-card reveal">
+        <div class="calc-form">
+          <div class="calc-field">
+            <label for="calc-especie">Espécie</label>
+            <select id="calc-especie">
+              <option value="cao">Cão</option>
+              <option value="gato">Gato</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="calc-peso">Peso (kg)</label>
+            <input type="text" id="calc-peso" placeholder="Ex: 8,5" inputmode="decimal" />
+          </div>
+          <button class="btn btn-primary" id="calc-btn">Calcular NER</button>
+        </div>
+        <div class="calc-result" id="calc-result" aria-live="polite"></div>
+        <p class="calc-note">*NER = 70 × peso<sup>0,75</sup> kcal/dia. Valores para orientação. Um plano completo requer avaliação veterinária.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ DIFERENCIAIS ══════════════════════════════ -->
+  <section class="sec dif text-center" id="diferenciais">
+    <div class="container">
+      <span class="tag tag-inv reveal">Por que a Vet Viajante</span>
+      <h2 class="st st-inv reveal">Não é só consulta. É comprometimento.</h2>
+      <p class="sd sd-inv reveal">Os números que explicam por que tutores que passam pela Vet Viajante não voltam para clínicas comuns.</p>
+      <div class="dif-grid">
+        <div class="dif-card reveal"><div class="dif-n">0min</div><h3>Espera pelo resultado do exame</h3><p>Hemograma e bioquímico processados in loco. Você sai com o diagnóstico na mão.</p></div>
+        <div class="dif-card reveal"><div class="dif-n">100%</div><h3>Cirurgias com monitoramento total</h3><p>Anestesia monitorada por equipamento digital, oximetria e pressão durante todo o procedimento.</p></div>
+        <div class="dif-card reveal"><div class="dif-n">1:1</div><h3>Atendimento individualizado</h3><p>Um veterinário dedicado ao seu pet. Sem rodízio de profissionais, sem histórico perdido.</p></div>
+        <div class="dif-card reveal"><div class="dif-n">48h</div><h3>Suporte pós-consulta direto</h3><p>Tutores têm acesso direto ao veterinário responsável no período pós-consulta ou pós-cirúrgico.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ DEPOIMENTOS ══════════════════════════════ -->
+  <section class="sec sec-lt text-center" id="depoimentos">
+    <div class="container">
+      <span class="tag reveal">Depoimentos</span>
+      <h2 class="st reveal">Últimas avaliações no Google</h2>
+      <p class="sd reveal">As 5 avaliações mais recentes do seu Perfil da Empresa aparecem aqui automaticamente.</p>
+      <div class="g-reviews reveal" id="google-reviews" aria-live="polite">
+        <div class="g-reviews-topbar">
+          <div class="g-reviews-brand">
+            <strong>Avaliações verificadas</strong>
+            <span>Google Meu Negócio via Places API</span>
+          </div>
+          <div class="g-reviews-nav" aria-label="Controles do carrossel">
+            <button type="button" class="g-reviews-btn" id="reviews-prev" aria-label="Ver avaliações anteriores">‹</button>
+            <button type="button" class="g-reviews-btn" id="reviews-next" aria-label="Ver próximas avaliações">›</button>
+          </div>
+        </div>
+
+        <div class="g-reviews-status" id="reviews-status">
+          Carregando avaliações do Google...
+        </div>
+
+        <div class="g-reviews-viewport" id="reviews-viewport" hidden>
+          <div class="g-reviews-track" id="reviews-track"></div>
+        </div>
+
+        <div class="g-reviews-dots" id="reviews-dots" aria-label="Paginação do carrossel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ TRANSPARÊNCIA ══════════════════════════════ -->
+  <section class="sec sec-white text-center">
+    <div class="container">
+      <span class="tag reveal">Transparência total</span>
+      <h2 class="st reveal">Respondendo o que você quer saber antes de perguntar</h2>
+      <p class="sd reveal">Sabemos que você escolhe com cuidado quem vai cuidar do seu pet. Justo.</p>
+      <div class="obj-grid">
+        <div class="obj reveal"><h4>É seguro fazer cirurgia aqui?</h4><p>Todos os procedimentos são realizados com anestesia monitorada, instrumental esterilizado e protocolo de biossegurança rigoroso. Exigimos exames pré-cirúrgicos e avaliamos individualmente cada caso.</p></div>
+        <div class="obj reveal"><h4>Os exames são confiáveis feitos na hora?</h4><p>Sim. Utilizamos analisadores hematológicos e bioquímicos de precisão clínica, calibrados diariamente, com acurácia equivalente a laboratórios externos.</p></div>
+        <div class="obj reveal"><h4>E o acompanhamento pós-cirúrgico?</h4><p>O pós-operatório está incluído. Você recebe orientações por escrito e acesso direto ao veterinário responsável pelos primeiros dias de recuperação.</p></div>
+        <div class="obj reveal"><h4>Atende todas as raças e portes?</h4><p>Somos especializados em pequenos animais — cães e gatos até 25kg. Para casos específicos, avaliamos previamente e indicamos o melhor caminho com honestidade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CTA ══════════════════════════════ -->
+  <section class="cta-sec text-center">
+    <div class="container">
+      <h2 class="reveal">Agende agora. Seu pet não pode esperar.</h2>
+      <p class="reveal">Consultas disponíveis esta semana. Sem longas filas, com o profissional que vai conhecer seu animal pelo nome.</p>
+      <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20*Vet%20Viajante*." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cta reveal">Quero agendar minha consulta →</a>
+      <div class="cta-bdgs reveal">
+        <span class="cta-b"><span class="dot"></span>Sem taxa de agendamento</span>
+        <span class="cta-b"><span class="dot"></span>Confirmação imediata</span>
+        <span class="cta-b"><span class="dot"></span>Cancelamento gratuito com 24h</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FAQ ══════════════════════════════ -->
+  <section class="sec sec-white text-center" id="faq">
+    <div class="container">
+      <span class="tag reveal">Dúvidas frequentes</span>
+      <h2 class="st reveal">Perguntas e respostas</h2>
+      <div class="faq-list">
+        <div class="faq-it reveal">
+          <button class="faq-q" aria-expanded="false">
+            Com quanto tempo devo agendar?
+            <div class="faq-ic" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a">Para consultas de rotina, recomendamos 2 a 3 dias de antecedência. Urgências são avaliadas no mesmo dia mediante disponibilidade.</div>
+        </div>
+        <div class="faq-it reveal">
+          <button class="faq-q" aria-expanded="false">
+            Meu pet precisa estar em jejum?
+            <div class="faq-ic" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a">Apenas para cirurgias e exames bioquímicos específicos. Para consultas clínicas de rotina, não é necessário jejum.</div>
+        </div>
+        <div class="faq-it reveal">
+          <button class="faq-q" aria-expanded="false">
+            Vocês emitem atestados e declarações?
+            <div class="faq-ic" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a">Sim. Emitimos atestados de saúde, declarações para transporte aéreo, laudos pós-cirúrgicos e toda documentação com validade legal.</div>
+        </div>
+        <div class="faq-it reveal">
+          <button class="faq-q" aria-expanded="false">
+            Quais formas de pagamento são aceitas?
+            <div class="faq-ic" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a">Cartão de crédito (até 10x), débito, Pix e dinheiro.</div>
+        </div>
+        <div class="faq-it reveal">
+          <button class="faq-q" aria-expanded="false">
+            A dieta personalizada substitui a ração?
+            <div class="faq-ic" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a">Pode ser complementar ou substituta, dependendo da condição clínica. Nossa nutricionista elabora o plano mais adequado caso a caso com acompanhamento mensal.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ft-grid">
+        <div class="ft-brand">
+          <h3>Vet <span>Viajante</span></h3>
+          <p>Medicina veterinária de excelência para pequenos animais. Diagnóstico rápido, cirurgia segura e cuidado de verdade.</p>
+        </div>
+        <div class="ft-col">
+          <h4>Serviços</h4>
+          <a href="#servicos">Consultas</a>
+          <a href="#servicos">Cirurgias</a>
+          <a href="#servicos">Exames</a>
+          <a href="#calculadora">Dietas</a>
+          <a href="#servicos">Vacinas</a>
+        </div>
+        <div class="ft-col">
+          <h4>Institucional</h4>
+          <a href="#sobre">Sobre nós</a>
+          <a href="#sobre">Equipe</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="ft-col">
+          <h4>Contato</h4>
+          <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20*Vet%20Viajante*." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="#">Instagram</a>
+          <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20*Vet%20Viajante*." target="_blank" rel="noopener noreferrer">Agendar</a>
+          <a href="#">Endereço</a>
+        </div>
+      </div>
+      <div class="ft-bot">
+        <p>© 2024 Vet Viajante · Todos os direitos reservados · CNPJ 48.214.554/0001-18</p>
+        <div class="soc">
+          <a href="#" class="soc-b" aria-label="Instagram">📸</a>
+          <a href="#" class="soc-b" aria-label="WhatsApp">💬</a>
+          <a href="#" class="soc-b" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════ WHATSAPP FIXO ══════════════════════════════ -->
+  <a href="https://wa.me/553491026420?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20*Vet%20Viajante*." target="_blank" rel="noopener noreferrer" class="wa" title="Fale pelo WhatsApp" aria-label="Fale conosco pelo WhatsApp">💬</a>
+
+  <!-- ══════════════════════════════ MODAL DE AGENDAMENTO ══════════════════════════════ -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Fechar modal">✕</button>
+
+      <!-- Painel: formulário -->
+      <div id="modal-form-panel">
+        <img src="Logo.jpg.jpeg" alt="Logo" class="modal-icon" />
+        <h2 id="modal-title">Agendar consulta</h2>
+        <p class="modal-sub">Preencha os dados abaixo e entraremos em contato pelo WhatsApp em instantes.</p>
+        <form id="modal-form" novalidate>
+          <div class="form-group">
+            <label for="f-nome">Seu nome *</label>
+            <input type="text" id="f-nome" placeholder="Ex: Maria Silva" autocomplete="name" />
+            <span class="form-error" id="err-nome" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-whatsapp">WhatsApp *</label>
+            <input type="tel" id="f-whatsapp" placeholder="(34) 91026420" autocomplete="tel" inputmode="numeric" />
+            <span class="form-error" id="err-whatsapp" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-pet">Nome do pet *</label>
+            <input type="text" id="f-pet" placeholder="Ex: Thor" />
+            <span class="form-error" id="err-pet" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-especie">Espécie *</label>
+            <select id="f-especie">
+              <option value="">Selecione…</option>
+              <option value="Cão">Cão</option>
+              <option value="Gato">Gato</option>
+            </select>
+            <span class="form-error" id="err-especie" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-sintoma">Motivo / serviço desejado</label>
+            <textarea id="f-sintoma" rows="3" placeholder="Descreva brevemente o sintoma ou serviço que precisa…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Enviar pelo WhatsApp 💬</button>
+        </form>
+      </div>
+
+      <!-- Painel: sucesso -->
+      <div id="modal-success-panel" hidden>
+        <div class="modal-success">
+          <div class="success-ico" aria-hidden="true">✅</div>
+          <h2 id="success-title">Mensagem enviada!</h2>
+          <p id="success-msg"></p>
+          <button class="btn btn-primary btn-full" id="modal-close-success">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.GOOGLE_REVIEWS_CONFIG = {
+      apiKey: 'API_KEY',
+      placeId: 'PChIJ4-sEmeXRupQRvWWiZb3-OwY',
+      language: 'pt-BR',
+      region: 'BR',
+      maxReviews: 5
+    };
+  </script>
+  <script src="main.js"></script>
+  <script>
+    (function loadGooglePlacesApi() {
+      const cfg = window.GOOGLE_REVIEWS_CONFIG || {};
+      if (!cfg.apiKey || cfg.apiKey === 'API_KEY') return;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.defer = true;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(cfg.apiKey)}&loading=async&libraries=places&callback=initGoogleReviewsCarousel&language=${encodeURIComponent(cfg.language || 'pt-BR')}&region=${encodeURIComponent(cfg.region || 'BR')}`;
+      document.body.appendChild(script);
+    })();
+  </script>
+</body>
+</html>
